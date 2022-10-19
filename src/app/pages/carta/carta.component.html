@@ -1,0 +1,279 @@
+<div class=" content">
+  <div class="row">
+    <img src="assets/img/LOGO.png" style="width: 180px;    width: 180px;margin-top: -50px;margin:auto;margin-top:-50px"> 
+
+  </div>
+  <h4 class=" card-title" style="margin-bottom:5px;font-weight: bold;font-size: 20px;text-align: center;">
+   QUIERO QUE EN LA PISTA BAILE
+  </h4>
+  <div class=" card" style="margin: auto;    max-width: 500px;background: black !important;    box-shadow: 0 0 5px #fb00ff;;
+  " *animIf="animarModal; info: { startAnim: 'bounceIn', endAnim: 'bounceOut', time: 1000 }">
+    <div class=" card-body">
+
+      <div class="row">
+        <div class="col" style="max-height: 90px;
+            max-width: 8rem;  ">
+
+          <a href="javascript:void(0)">
+            <img src="{{reproductor[0].imagen}}" style="   width: 8rem;" />
+            <img src="assets/img/rolling.svg" style="        max-width: 2rem;width: 100%;
+                      position: relative;
+                      left: 65%;
+                      bottom: 37%;">
+          </a>
+
+
+        </div>
+        <div class="col">
+          <h3 class=" card-title" style="margin-bottom:0px">
+            {{reproductor[0].nombre}} 🎵🎧
+          </h3>
+          <a style="margin:0px;font-size: 1rem;color:White" *ngFor="let artista of reproductor[0].artistas;let i=index">
+            {{artista.name }}<a *ngIf="i!=reproductor[0].artistas.length-1">,</a>
+          </a>
+          <p><button type="submit" class="btn btn-primary"(click)="solicitarMusica()" style="margin:auto;padding: 5px !important;" >Solicitar música <i style="    margin-bottom: 4px;color: gold;" class="tim-icons icon-shape-star
+
+            "></i></button></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!--<h1 class="text-center" style="font-size: 40px;letter-spacing:6px;color:#58bccc;margin-top: 5vh;">MENÚ</h1>
+  <div class="card" style="box-shadow: 0 0 20px #58bccc;background: #c041ca00;;margin-top:10px;padding:10px">
+    <h4 class="text-center" style="font-weight:bold;font-size:20px;color:#58bccc">CÓCTELES DE AUTOR</h4>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let coctel of cocteles" (click)="openDialog(coctel)
+      ">
+        <div class="row">
+          <div class="col-3">
+            <img  src="{{coctel.data.imagen}}" style="    width: 70px;">
+          </div>
+          <div class="col-9">
+            <h4 class=" card-title" style="margin-bottom:0px;font-weight: bold;font-size: 20px;">
+              {{coctel.data.nombre}}
+            </h4>
+            <h1 class=" card-title" style="margin-bottom:0px; color:#58bccc;">
+              ${{coctel.data.valor | number}}
+            </h1>
+            <p>
+              {{coctel.data.descripcion}}
+            </p>
+          </div>
+        </div>
+          
+          
+      </li>
+      
+    </ul>
+  </div>
+
+
+  <div class="card aniview-v3" data-av-animation="slideInRight" style="box-shadow: 0 0 20px #53ce56;background: #c041ca00;;margin-top:10px;padding:10px">
+    <h4 class="text-center" style="font-weight:bold;font-size:20px;color: #53ce56">CÓCTELES CLÁSICOS</h4>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let coctel of cocteles">
+        <div class="row">
+          <div class="col-3">
+            <img  src="{{coctel.data.imagen}}" style="    width: 70px;">
+          </div>
+          <div class="col-9">
+            <h4 class=" card-title" style="margin-bottom:0px;font-weight: bold;font-size: 20px;">
+              {{coctel.data.nombre}}
+            </h4>
+            <h1 class=" card-title" style="margin-bottom:0px; color:#53ce56;">
+              ${{coctel.data.valor | number}}
+            </h1>
+            <p>
+              {{coctel.data.descripcion}}
+            </p>
+          </div>
+        </div>
+          
+          
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="card" style="box-shadow: 0 0 20px #2891f6;background: #c041ca00;;margin-top:10px;padding:10px">
+    <h4 class="text-center" style="font-weight:bold;font-size:20px;color: #2891f6;">SHOTS</h4>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let coctel of cocteles">
+        <div class="row">
+          <div class="col-3">
+            <img  src="{{coctel.data.imagen}}" style="    width: 70px;">
+          </div>
+          <div class="col-9">
+            <h4 class=" card-title" style="margin-bottom:0px;font-weight: bold;font-size: 20px;">
+              {{coctel.data.nombre}}
+            </h4>
+            <h1 class=" card-title" style="margin-bottom:0px; color:#2891f6;;">
+              ${{coctel.data.valor | number}}
+            </h1>
+            <p>
+              {{coctel.data.descripcion}}
+            </p>
+          </div>
+        </div>
+          
+          
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="card" style="box-shadow: 0 0 20px #2df39d;background: #c041ca00;;margin-top:10px;padding:10px">
+    <h4 class="text-center" style="font-weight:bold;font-size:20px;color: #2df39d;">BARRILES PARA COMPARTIR</h4>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let coctel of cocteles">
+        <div class="row">
+          <div class="col-3">
+            <img  src="{{coctel.data.imagen}}" style="    width: 70px;">
+          </div>
+          <div class="col-9">
+            <h4 class=" card-title" style="margin-bottom:0px;font-weight: bold;font-size: 20px;">
+              {{coctel.data.nombre}}
+            </h4>
+            <h1 class=" card-title" style="margin-bottom:0px; color:#2df39d;;">
+              ${{coctel.data.valor | number}}
+            </h1>
+            <p>
+              {{coctel.data.descripcion}}
+            </p>
+          </div>
+        </div>
+          
+          
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="card" style="box-shadow: 0 0 20px #fd9d60;background: #c041ca00;;margin-top:10px;padding:10px">
+    <h4 class="text-center" style="font-weight:bold;font-size:20px;color: #fd9d60;">LICORES</h4>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let coctel of cocteles">
+        <div class="row">
+          <div class="col-3">
+            <img  src="{{coctel.data.imagen}}" style="    width: 70px;">
+          </div>
+          <div class="col-9">
+            <h4 class=" card-title" style="margin-bottom:0px;font-weight: bold;font-size: 20px;">
+              {{coctel.data.nombre}}
+            </h4>
+            <h1 class=" card-title" style="margin-bottom:0px; color:#fd9d60;">
+              ${{coctel.data.valor | number}}
+            </h1>
+            <p>
+              {{coctel.data.descripcion}}
+            </p>
+          </div>
+        </div>
+          
+          
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="card" style="box-shadow: 0 0 20px #2df39d;background: #c041ca00;;margin-top:10px;padding:10px">
+    <h4 class="text-center" style="font-weight:bold;font-size:20px;color: #2df39d;">BARRILES PARA COMPARTIR</h4>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let coctel of cocteles">
+        <div class="row">
+          <div class="col-3">
+            <img  src="{{coctel.data.imagen}}" style="    width: 70px;">
+          </div>
+          <div class="col-9">
+            <h4 class=" card-title" style="margin-bottom:0px;font-weight: bold;font-size: 20px;">
+              {{coctel.data.nombre}}
+            </h4>
+            <h1 class=" card-title" style="margin-bottom:0px; color:#2df39d;;">
+              ${{coctel.data.valor | number}}
+            </h1>
+            <p>
+              {{coctel.data.descripcion}}
+            </p>
+          </div>
+        </div>
+          
+          
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="card" style="box-shadow: 0 0 20px #fd9d60;background: #c041ca00;;margin-top:10px;padding:10px">
+    <h4 class="text-center" style="font-weight:bold;font-size:20px;color: #fd9d60;">SIN LICOR</h4>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let coctel of cocteles">
+        <div class="row">
+          <div class="col-3">
+            <img  src="{{coctel.data.imagen}}" style="    width: 70px;">
+          </div>
+          <div class="col-9">
+            <h4 class=" card-title" style="margin-bottom:0px;font-weight: bold;font-size: 20px;">
+              {{coctel.data.nombre}}
+            </h4>
+            <h1 class=" card-title" style="margin-bottom:0px; color:#fd9d60;">
+              ${{coctel.data.valor | number}}
+            </h1>
+            <p>
+              {{coctel.data.descripcion}}
+            </p>
+          </div>
+        </div>
+          
+          
+      </li>
+      
+    </ul>
+  </div>
+  
+
+  <div class="card" style="box-shadow: 0 0 20px #dfbf05;background: #c041ca00;;margin-top:10px;padding:10px">
+    <h4 class="text-center" style="font-weight:bold;font-size:20px;color: #dfbf05;">CERVEZAS</h4>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let coctel of cocteles">
+        <div class="row">
+          <div class="col-3">
+            <img  src="{{coctel.data.imagen}}" style="    width: 70px;">
+          </div>
+          <div class="col-9">
+            <h4 class=" card-title" style="margin-bottom:0px;font-weight: bold;font-size: 20px;">
+              {{coctel.data.nombre}}
+            </h4>
+            <h1 class=" card-title" style="margin-bottom:0px; color:#dfbf05;">
+              ${{coctel.data.valor | number}}
+            </h1>
+            <p>
+              {{coctel.data.descripcion}}
+            </p>
+          </div>
+        </div>
+          
+          
+      </li>
+      
+    </ul>
+  </div>-->
+
+  <img src="assets/carta3.jpg" style="margin-top:20px">
+
+
+
+  <hr>
+
+
+  
+
+  <style>
+    .card.card-user.font-icon-detail {
+      box-shadow: 0 0 20px #fb00ff;
+    }
+
+    .modal-content {
+      box-shadow: 0 0 20px #07463f !important;
+    }
+  </style>

@@ -1,0 +1,606 @@
+/*
+ =========================================================
+ * Black Dashboard Angular - v1.1.0
+ =========================================================
+
+ * Product Page: https://www.creative-tim.com/product/black-dashboard-angular
+ * Copyright 2019 Creative Tim (https://www.creative-tim.com)
+ * Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md)
+
+ =========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+*/
+
+// Core
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import "black-dashboard/custom/functions";
+@import "black-dashboard/bootstrap/functions";
+@import "black-dashboard/custom/variables";
+@import "black-dashboard/bootstrap/variables";
+@import "black-dashboard/custom/mixins";
+@import "black-dashboard/bootstrap/mixins";
+// Bootstrap components
+@import "black-dashboard/bootstrap/root";
+@import "black-dashboard/bootstrap/reboot";
+@import "black-dashboard/bootstrap/type";
+@import "black-dashboard/bootstrap/images";
+@import "black-dashboard/bootstrap/code";
+@import "black-dashboard/bootstrap/grid";
+@import "black-dashboard/bootstrap/tables";
+@import "black-dashboard/bootstrap/forms";
+@import "black-dashboard/bootstrap/buttons";
+@import "black-dashboard/bootstrap/transitions";
+@import "black-dashboard/bootstrap/dropdown";
+@import "black-dashboard/bootstrap/button-group";
+@import "black-dashboard/bootstrap/input-group";
+@import "black-dashboard/bootstrap/custom-forms";
+@import "black-dashboard/bootstrap/nav";
+@import "black-dashboard/bootstrap/navbar";
+@import "black-dashboard/bootstrap/card";
+@import "black-dashboard/bootstrap/breadcrumb";
+@import "black-dashboard/bootstrap/pagination";
+@import "black-dashboard/bootstrap/badge";
+@import "black-dashboard/bootstrap/jumbotron";
+@import "black-dashboard/bootstrap/alert";
+@import "black-dashboard/bootstrap/progress";
+@import "black-dashboard/bootstrap/media";
+@import "black-dashboard/bootstrap/list-group";
+@import "black-dashboard/bootstrap/close";
+@import "black-dashboard/bootstrap/modal";
+@import "black-dashboard/bootstrap/tooltip";
+@import "black-dashboard/bootstrap/popover";
+@import "black-dashboard/bootstrap/carousel";
+@import "black-dashboard/bootstrap/utilities";
+@import "black-dashboard/bootstrap/print";
+// Custom components
+@import "black-dashboard/custom/alerts.scss";
+@import "black-dashboard/custom/buttons.scss";
+@import "black-dashboard/custom/dropdown.scss";
+@import "black-dashboard/custom/footer.scss";
+@import "black-dashboard/custom/forms.scss";
+@import "black-dashboard/custom/images.scss";
+@import "black-dashboard/custom/modal.scss";
+@import "black-dashboard/custom/navbar.scss";
+@import "black-dashboard/custom/type.scss";
+@import "black-dashboard/custom/tables";
+@import "black-dashboard/custom/checkboxes-radio";
+@import "black-dashboard/custom/fixed-plugin";
+@import "black-dashboard/custom/sidebar-and-main-panel.scss";
+@import "black-dashboard/custom/misc.scss";
+@import "black-dashboard/custom/rtl.scss";
+@import "black-dashboard/custom/input-group.scss";
+// Vendor / Plugins
+@import "black-dashboard/custom/vendor/plugin-perfect-scrollbar.scss";
+@import "black-dashboard/custom/vendor/plugin-animate-bootstrap-notify.scss";
+// light mode
+@import "black-dashboard/custom/white-content.scss";
+// Cards
+@import 'black-dashboard/custom/card';
+@import "black-dashboard/custom/cards/card-chart";
+@import "black-dashboard/custom/cards/card-map";
+@import "black-dashboard/custom/cards/card-user";
+@import "black-dashboard/custom/cards/card-task";
+@import "black-dashboard/custom/cards/card-plain";
+// Angular Differences
+@import "black-dashboard/angular-differences/angular-differences";
+.tdReproduccion {
+    background: black !important;
+    border-style: solid !important;
+    border: blanchedalmond !important;
+}
+
+.textoBlanco {
+    color: white !important
+}
+
+.textoNegro {
+    color: black !important
+}
+
+
+body {
+    //  background: black !important;
+}
+.swal2-title {
+    position: relative;
+    max-width: 100%;
+    margin: 0;
+    padding: 0.8em 1em 0;
+    color: #d352ff !important;    font-size: 1.5em !important;
+    font-weight: 500 !important;
+    text-align: center;
+    text-transform: none;
+    word-wrap: break-word;
+  //  background: #0000008a;
+}
+
+.swal2-styled.swal2-confirm {
+    border: 0;
+    border-radius: 0.25em;
+    background: initial;
+    background-color: #7367f0;
+    color: #fff;
+    font-size: 1em;
+}
+.swal2-styled.swal2-confirm {
+    border: 0;
+    border-radius: 0.25em;
+    background: initial;
+    background-color: #67c2f0;
+    color: #fff;
+    font-size: 1em;
+    width: 50%;
+}
+.player {
+    overflow: hidden;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.6);
+    position: relative;
+    width: 320px;
+    height: 515px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    .cover {
+        position: absolute;
+        z-index: 1;
+        width: 320px;
+        height: 250px;
+        background-size: cover;
+    }
+    nav {
+        margin-top: 5px;
+        position: relative;
+        z-index: 3;
+        min-height: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 15px;
+        .left {
+            display: flex;
+            i {
+                cursor: pointer;
+                color: white;
+            }
+            h6 {
+                margin: 0;
+                padding-left: 20px;
+                color: white;
+                font-size: 18px;
+                line-height: 1.38;
+            }
+        }
+        .right {
+            display: flex;
+            i {
+                cursor: pointer;
+                color: white;
+            }
+            .search {
+                padding-right: 10px;
+            }
+        }
+    }
+    .player-ui {
+        position: relative;
+        z-index: 3;
+        padding-top: 30px;
+        .title {
+            display: flex;
+            justify-content: center;
+            h3 {
+                margin: 0;
+                color: white;
+                font-size: 30px;
+                font-weight: 100;
+            }
+        }
+        .small {
+            padding: 15px 35px 0px 35px;
+            display: flex;
+            justify-content: space-between;
+            p,
+            i {
+                margin: 0;
+                color: white;
+                font-size: 14px;
+            }
+            p {
+                color: #ddd;
+            }
+            i {
+                font-size: 16px;
+            }
+        }
+        .progress {
+            position: relative;
+            height: 2px;
+            margin: 30px 20px 0px 20px;
+            background: rgba(255, 255, 255, 0.3);
+            .played {
+                width: 20%;
+                height: 2px;
+                position: absolute;
+                background: $primary;
+                .circle {
+                    width: 10px;
+                    height: 10px;
+                    background: $primary;
+                    border-radius: 50%;
+                    margin-left: 52px;
+                    margin-top: -4px;
+                    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+                }
+            }
+        }
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            padding: 25px 50px 0px 50px;
+            i {
+                color: white;
+                font-size: 32px;
+            }
+        }
+    }
+    .btn {
+        margin-left: auto;
+        margin-right: 10px;
+        // box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 4;
+        margin-top: 20px;
+        width: 40px;
+        height: 40px;
+        // background: $secondary;
+        border-radius: 50%;
+        i {
+            font-size: 28px;
+            color: white;
+        }
+    }
+    .music {
+        padding: 10px 20px 0px 20px;
+        background: #1A1B1E;
+        margin-top: -26px;
+        .song-1,
+        .song-2,
+        .song-3,
+        .song-4 {
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            .info {
+                display: flex;
+                align-items: center;
+                .img {
+                    width: 60px;
+                    height: 60px;
+                    background: red;
+                    margin-right: 10px;
+                }
+                .img.first {
+                    background: url(http://static.stereogum.com/blogs.dir/2/files/2011/12/Adele-21.jpg) center center;
+                    background-size: cover;
+                }
+                .img.second {
+                    background: url(https://upload.wikimedia.org/wikipedia/en/d/df/RedHotChiliPeppersCalifornication.jpg) center center;
+                    background-size: cover;
+                }
+                .img.third {
+                    background: url(http://images.rapgenius.com/59fc635f7dbe6b5cd1e07e5e605c96b5.640x640x1.jpg) center center;
+                    background-size: cover;
+                }
+                .img.fourth {
+                    background: url(http://djrichiep.us/wp-content/uploads/2014/06/princelgc7F.jpg) center center;
+                    background-size: cover;
+                }
+                .titles {
+                    h5,
+                    p {
+                        margin: 0;
+                        color: white;
+                    }
+                    h5 {
+                        font-size: 17px;
+                        font-weight: 400;
+                        margin-bottom: 7px;
+                    }
+                    p {
+                        font-size: 13px;
+                        color: #929292;
+                    }
+                }
+            }
+            .state.playing {
+                i {
+                    color: $primary;
+                }
+            }
+            .state {
+                i {
+                    color: #ddd;
+                }
+            }
+        }
+    }
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 18px;
+    background: linear-gradient(
+        0deg
+        , #581a87 0%, black 100%) !important;
+    }
+
+.float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: rgb(201, 32, 111);
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+}
+
+i{
+    font-family: Verdana, Geneva, sans-serif;
+
+}
+.my-float {
+    margin-top: 22px;
+}
+
+button.font-icon-detail:disabled {
+    opacity: 0.5;
+}
+
+.cancionVotada {
+    
+    width: 100%;
+    background: #6e2ca3 !important;
+        background: #6e2ca3!important;
+    margin-top:8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    border: white;
+    border-style: solid;
+    border-radius: 3px;
+    border: 1px solid #ffe500 !important;
+    box-shadow: 0 5px 20px 0 #ffe500 !important;
+}
+
+.disabled{
+    background-color: #c2b6bd !important;
+    background: #d3cdd0 !important;
+}
+.font-icon-detail{
+background: black;
+border-radius:25px;
+}
+
+.textoResponsiveGrande{
+    font-size: 0.8rem;
+}
+.textoResponsivePequeño{
+    font-size: 0.6rem;
+}
+::ng-deep #WIX_ADS{
+    visibility: collapse !important;
+
+}
+ #WIX_ADS,._3WwiM _2eMFb{
+    visibility: collapse !important;
+
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	select:focus,
+	textarea:focus,
+	input:focus {
+		font-size: 16px;
+	}
+}
+input, input:active, input:focus, input:focus-within, input:hover, input:visited {
+    font-size: 16px!important;
+}
+
+iframe.site-root{
+    width: 100% !important;
+
+}
+::ng-deep.masterPage{
+    width: 100% !important;
+
+}
+
+.SITE_CONTAINER{
+    width: 100% !important;
+
+}
+
+
+.menu.content{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.recordartorio{
+    color:gold !important;
+    font-weight: bold !important;
+}
+
+input{
+    background: aliceblue !important;
+    color:black !important;
+}
+
+.colorSecundario{
+    color: #fd5d93 !important;
+}
+
+.modal-content{
+    background: #5c0979;
+}
+.drag-scroll-content{
+    height: 105% !important
+}
+
+.sidebar{
+    background: linear-gradient(
+0deg
+, #581a87 0%, black 100%) !important;
+}
+.main-panel{
+    background:  linear-gradient(0deg, #581a87 0%, #250932 100%) !important;;;
+}
+
+.light-blue-backdrop,::ng-deep.modal-backdrop {
+    background-color: #1b1d1f !important;
+  }
+
+  .btn-primary.disabled, .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled.focus, .btn-primary.disabled:active, .btn-primary.disabled.active, .btn-primary:disabled, .btn-primary:disabled:hover, .btn-primary:disabled:focus, .btn-primary:disabled.focus, .btn-primary:disabled:active, .btn-primary:disabled.active, .btn-primary[disabled], .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled].focus, .btn-primary[disabled]:active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary.focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary.active {
+      background: #5c0979 !important
+  }
+
+  .btn-primary{
+    background: #5c0979 !important
+
+  }
+
+  .btn-facebook{
+    background: #1a0979 !important
+
+  }
+
+
+  .wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    
+.button {
+    min-width: 300px;
+    min-height: 60px;
+    font-size: 22px;
+    text-transform: capitalize;
+    letter-spacing: 1.3px;
+    font-weight: 800;
+    color: #313133;
+    background: #4FD1C5;
+    background: -webkit-gradient(linear, left top, right top, from(#e681d7), to(#d14f98));
+    background: linear-gradient(90deg, #e681d7 0%, #d14f98 100%);
+    border: none;
+    border-radius: 1000px;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 10px;
+    }
+  
+  
+  }
+
+  html{
+    background:  linear-gradient(0deg, #581a87 0%, #250932 100%) !important;;;
+  }
+  
+::ng-deep.mat-dialog-container {
+    box-shadow: 0px 11px 15px -7px rgb(0 0 0 / 20%), 0px 24px 38px 3px rgb(0 0 0 / 14%), 0px 9px 46px 8px rgb(0 0 0 / 12%);
+    background: #590c32e6 !important;
+    color: rgba(0, 0, 0, 0.87);
+  }
+  .mat-dialog-container {
+    box-shadow: 0px 11px 15px -7px rgb(0 0 0 / 20%), 0px 24px 38px 3px rgb(0 0 0 / 14%), 0px 9px 46px 8px rgb(0 0 0 / 12%);
+    background: #5c0979 !important;
+        color: rgba(0, 0, 0, 0.87);
+        box-shadow: 0 0 20px #fb00ff;
+        border-radius: 25px;
+  }
+
+  p{
+    font-family: 'Anton', sans-serif !important;
+  }
+
+  h1,h2{
+    font-family: 'Anton', sans-serif !important;
+  }
+
+  button,h3,h4,h5,a,p,input,label,.text-danger{
+    font-family: 'Montserrat', sans-serif !important;  }
+
+    input{
+        color:black !important;
+        font-weight: 800 !important;
+    }
+    mat-dialog-container{
+        box-shadow: 0 0 20px #fb00ff;
+    }
+
+    :ng-deep{
+        mat-dialog-container{
+            box-shadow: 0 0 20px #fb00ff;
+        }
+    }
+
+
+    .tituloAlerta{
+        margin-bottom: 0px !important;
+        font-family: 'Montserrat', sans-serif !important;  
+        font-weight: bold !important;
+        }
+    
+        .popupAlerta{
+            background: #360735de !important;
+    border-radius: 20px !important;
+
+    .swal2-html-container{
+        color: white !important;
+        font-family: 'Montserrat', sans-serif !important;  
+        font-weight: bold !important;
+    }
+    h2{
+        padding-top: 0px !important;
+    }
+
+
+    .swal2-styled.swal2-confirm {
+
+    background-color: #d267f0;
+    border-radius: 10px;
+    }
+
+    .swal2-image{
+        max-height: 200px !important;
+        max-width: 200px !important;
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+
+    }
+        }
+
+        .containerAlerta{
+            background: #222222d9 !important;
+ 
+        }

@@ -1,0 +1,46 @@
+h1 {
+  position: absolute;
+  top: 60%;
+  left: 45%;
+  margin-top: -50px;
+  margin-left: -50px;
+  font-family: 'Montserrat', sans-serif !important;  
+  font-weight: bold;
+  color: white !important;
+}
+
+.card {
+  height: 22vh;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #fb00ff;
+  background-size: cover;
+  background-position: center;
+}
+
+.card1 {
+  background-image: url("/assets/img/coctel2.jpeg");
+}
+
+.card2 {
+  background-image: url("/assets/img/combos.jpeg");
+  h1 {
+    position: absolute;
+    top: 60%;
+    left: 35%; 
+       margin-top: -50px;
+    margin-left: -50px;
+    font-family: 'Montserrat', sans-serif !important;  
+    font-weight: bold;
+    color: white !important;
+  }
+}
+
+.card3 {
+  background-image: url("/assets/img/neones.jpeg");
+}
+
+.cardDeshabilitado{
+  background-image: url("/assets/img/neones.jpeg");
+  h1{
+    left: 40% !important;
+  }}

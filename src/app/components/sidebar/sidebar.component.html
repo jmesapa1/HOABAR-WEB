@@ -1,0 +1,21 @@
+<div class="logo">
+    <a href="https://www.creative-tim.com?ref=bda-sidebar-logo" class="simple-text logo-normal">
+        <img src="./assets/img/LOGO.png" />
+    </a>
+</div>
+<div class="sidebar-wrapper">
+    <ul class="nav">
+        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class=" nav-item">
+
+            <a  class="{{ menuItem.class }}" [routerLink]="[menuItem.path]" >
+                <i class="tim-icons  {{ menuItem.icon }} {{ menuItem.class }}"></i>
+                <p  class="{{ menuItem.class }}">{{ menuItem.title }} <img *ngIf="menuItem.class==='recordartorio'" src="assets/img/new.png" style="width: 20%;"></p>
+
+            </a>
+        </li>
+    </ul>
+</div>
+
+<style>
+    
+</style>

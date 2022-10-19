@@ -1,0 +1,158 @@
+<div style="    height: 100vh !important;">
+    <div class="row">
+
+
+        <img *animIf="animarModal; info: { startAnim: 'bounceIn', endAnim: 'bounceOut', time: 1000 }"
+            src="assets/img/LOGO.png" style="width:200px;margin:auto">
+    </div>
+
+    <!--<form [formGroup]="withCellPhoneForm" *ngIf="seleccionCelular"
+    style="margin: auto;max-width: 70vh;width: 80%;min-width: 35vh;">-->
+    <p style="text-align: center;color:white">Enviaremos un código de validación a tu celular 📲</p>
+
+    <form [formGroup]="withCellPhoneForm" style="margin: auto;max-width: 70vh;width: 80%;min-width: 35vh;">
+        <div class="form-group">
+            <input numbersOnly
+                [class.invalid]="!withCellPhoneForm.controls.celular.valid && (withCellPhoneForm.controls.celular.touched )"
+                type="tel" ng2TelInput [ng2TelInputOptions]="{initialCountry: 'co'}" (countryChange)="onCountryChange($event)"  name="celular" class="form-control" maxlength="14" minlength="10" formControlName="celular"
+                placeholder="Ingrese su celular" style="text-align: center;">
+
+                <div *ngIf="withCellPhoneForm.controls.celular?.invalid">
+                <div *ngIf="withCellPhoneForm.controls.celular.errors?.required" class="text-danger">
+                    Complete este campo.
+                </div>
+                <div *ngIf="!withCellPhoneForm.controls.celular.errors?.required" class="text-danger">
+                    Formato inválido.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group" *ngIf="otpEnviado && usuarioNuevo">
+            <label style="color:white" for="exampleInputEmail1">Nombre</label>
+            <input type="text" name="nombre" class="form-control" formControlName="nombre"
+                placeholder="Ingrese su nombre">
+                <div *ngIf="withCellPhoneForm.controls.nombre?.invalid">
+                    <div *ngIf="withCellPhoneForm.controls.nombre.errors?.required" class="text-danger">
+                        Complete este campo.
+                    </div>
+                    <div *ngIf="!withCellPhoneForm.controls.nombre.errors?.required" class="text-danger">
+                        Formato inválido.
+                    </div>
+                </div>
+        </div>
+        <div class="form-group" *ngIf="otpEnviado && usuarioNuevo">
+            <label style="color:white" for="exampleFormControlSelect1">Género</label>
+            <select class="form-control" formControlName="genero" id="exampleFormControlSelect1" style="background: white;
+        color: black !important;">
+                <option value="">Seleccione una opción</option>
+                <option style="color:black" value="Hombre">Hombre</option>
+                <option style="color:black" value="Mujer">Mujer</option>
+                <option style="color:black" value="Otro">Otro</option>
+            </select>
+            <div *ngIf="withCellPhoneForm.controls.genero?.invalid || withCellPhoneForm.controls.genero?.value==='' ">
+                <div *ngIf="withCellPhoneForm.controls.genero.errors?.required || withCellPhoneForm.controls.genero?.value===''" class="text-danger">
+                    Complete este campo.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group" *ngIf="otpEnviado && usuarioNuevo">
+            <label style="color:white" for="exampleInputEmail1">Correo electrónico</label>
+            <input type="text" name="correo" class="form-control" formControlName="correo"
+                placeholder="Ingrese su correo">
+                <div *ngIf="withCellPhoneForm.controls.correo?.invalid">
+                    <div *ngIf="withCellPhoneForm.controls.correo.errors?.required" class="text-danger">
+                        Complete este campo.
+                    </div>
+                    <div *ngIf="!withCellPhoneForm.controls.correo.errors?.required" class="text-danger">
+                        Formato inválido.
+                    </div>
+                </div>
+        </div>
+        <div class="form-group" *ngIf="otpEnviado && usuarioNuevo">
+            <label style="color:white"  for="exampleFormControlSelect1">Fecha de nacimiento (DD/MM/AAAA)</label>
+            <input (click)="picker.open()"  [max]="maxDate"  placeholder="Fecha de nacimiento" readonly formControlName="nacimiento" matInput [matDatepicker]="picker" numbersOnly type="tel" class="form-control"
+                >
+                <mat-datepicker #picker></mat-datepicker>
+
+                <div *ngIf="withCellPhoneForm.controls.nacimiento?.invalid">
+                    <div *ngIf="withCellPhoneForm.controls.nacimiento.errors?.required" class="text-danger">
+                        Complete este campo.
+                    </div>
+                    <div *ngIf="!withCellPhoneForm.controls.nacimiento.errors?.required" class="text-danger">
+                        Formato inválido.
+                    </div>
+                </div>
+        </div>
+        
+
+        <div class="custom-control custom-checkbox my-1 mr-sm-2" *ngIf="otpEnviado && usuarioNuevo">
+            <input type="checkbox" formControlName="politica" class="custom-control-input" id="customControlInline">
+            <label  style="font-size: 0.9rem;
+        color: white;" class="custom-control-label" for="customControlInline">Aceptar pólitica de tratamiento de
+                datos</label>
+            <br>
+            <span style="font-size: 0.9rem;margin-left:5px" (click)="verPolitica()">ver documento</span>
+            <div *ngIf="withCellPhoneForm.controls.politica?.invalid">
+                <div *ngIf="withCellPhoneForm.controls.politica.errors?.required" class="text-danger">
+                    Complete este campo.
+                </div>
+                
+            </div>
+        </div>
+    </form>
+
+    <div class="row" *ngIf="seleccionCelular" #botonCelular>
+        <button class="btn btn-primary" style="width: 90%;background: #e14eca !important; margin: auto;"
+            (click)="AuthLoginCell()" *ngIf="seleccionCelular && !seleccionFacebook && !usuarioNuevo"
+            [disabled]="withCellPhoneForm.invalid">Validar
+            celular</button>
+
+        <button class="btn btn-primary" style="width: 100%;" (click)="ingresar()"
+            *ngIf="seleccionCelular && !seleccionFacebook && usuarioNuevo"
+            [disabled]="withCellPhoneForm.invalid">Ingresar</button>
+
+
+        <!-- <button class="btn btn-secondary" style="width: 100%;" (click)="cancelar()"
+       >Cancelar</button>-->
+    </div>
+
+    <div class="row" #botonesPrincipal>
+        <!--<button class="btn btn-facebook" style="width: 100%;" 
+        *ngIf="!seleccionCelular && !seleccionFacebook" (click)="FacebookAuth()"><img src="assets/img/face.png"
+            style="width: 1rem;"> Ingresar con Facebook</button>-->
+
+        <body>
+
+        </body>
+        <button class="btn btn-primary" style="width: 100%;" (click)="seleccionarCelular()"
+            *ngIf="!seleccionCelular && !seleccionFacebook"> Ingresar con celular</button>
+
+            <div style="margin-bottom: 15px;"></div>
+    </div>
+
+
+    <ng-template #modalOtp>
+        <div class="modal-header">
+            <h4 class="modal-title pull-left">Validación de celular</h4>
+            <button type="button" class="close pull-right" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <h3 class="textoNegro">Te hemos enviado un código de confirmación a tu celular</h3>
+            <div class="row">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Código de confirmación</label>
+                    <input type="tel" name="OTP" class="form-control" placeholder="Ingrese código de confirmación">
+
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+
+            <button class="btn btn-primary" (click)="this.modalRef.hide()">Aceptar</button>
+
+        </div>
+    </ng-template>
+</div>

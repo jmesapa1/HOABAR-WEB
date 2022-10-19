@@ -1,0 +1,43 @@
+<div style="background:  linear-gradient(0deg, #581a87 0%, #250932 100%) !important;;;" class="page-container .page-container">
+    <div class="grid">
+        
+<div class="row">
+    <img src="assets/img/LOGO.png" style="width:150px;margin:auto;">
+</div>
+        
+    </div>
+    <div class="container" style="padding:20px">
+
+        <div  class="card card1" (click)="irA('/landing/carta')" style="    border-radius: 20px;box-shadow: 0 0 20px #fb00ff; ">
+            <h1 style="    background: #0d1326d1 !important;
+            border-radius: 20px;
+            padding: 8px;
+            color: black;left: 52%;">CARTA</h1>
+        </div>
+        <div (click)="solicitarMusica()" [class.cardDeshabilitado]="!estadoServicio" [class.card3]="estadoServicio" class="card">
+            <h1  style="    background: #c236cbc7;text-align: center;
+            border-radius: 20px;
+            padding: 8px;
+            color: black;">TU MÚSICA
+            <br>
+            {{!estadoServicio ?'Deshabilitado':''}}
+            
+        </h1>
+
+        </div>
+        <div   class="card card2" style="     filter: blur(2px);border-radius: 20px;box-shadow: 0 0 20px #fb00ff">
+            <h1 style="background: #4be2ef7d;
+            border-radius: 20px;
+            padding: 8px;
+            color: black;  left:40%;  text-align: center;">
+             COMBOS
+            <br>
+            Próximamente
+            </h1>
+        </div>
+
+    </div>
+
+
+
+</div>

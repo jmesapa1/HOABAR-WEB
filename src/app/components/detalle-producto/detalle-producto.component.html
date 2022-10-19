@@ -1,0 +1,23 @@
+<mat-dialog-content  class="mat-typography">
+  <div [mat-dialog-close]="true" style="width: 25px;
+      margin-right: -10px;
+  height: 25px;
+  background: transparent;
+  border:1px solid white;
+  border-radius: 31px;margin-left: auto;" >
+    <i class="tim-icons icon-simple-remove" style="    font-size: 15px;
+    margin-left: 4px;
+    margin-top: 2px;
+    color: white;font-weight: bold;;
+"> </i>
+  </div>
+    <div class="row" style="margin-top:10px">
+     
+            <img src="{{coctel.data.imagen}}" style="   width: 80%;border-radius: 7px;margin:auto" />
+  </div>
+
+    <h4 class=" card-title text-center" style="margin-bottom:0px;font-weight: bold;font-size: 20px;    margin-top: 10px;">
+      {{coctel.data.nombre}}
+    </h4>
+</mat-dialog-content>
+
